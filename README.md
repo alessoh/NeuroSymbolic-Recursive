@@ -49,15 +49,13 @@ For CPU-only installations, PyTorch will automatically install the appropriate v
 
 # Quick Start Guide
 
-## Installation (5 minutes)
+## Installation 
 
-### Step 1: Clone or Download
+### Step 1: Clone 
 ```bash
 # If using git
 git clone https://github.com/yourusername/neurosymbolic-recursive.git
 cd neurosymbolic-recursive
-
-# Or download and extract the ZIP file
 ```
 
 ### Step 2: Create Virtual Environment
@@ -462,7 +460,6 @@ for i, batch in enumerate(train_loader):
 
 ### Documentation
 - Check `README.md` for detailed information
-- Review `PROJECT_STRUCTURE.md` for file organization
 - Read inline code comments and docstrings
 
 ### Community
@@ -485,157 +482,7 @@ for state in result.refinement_history:
     print(f"Violations: {state.violations}")
 ```
 
-## Summary
-
-You've now:
-1. ✅ Installed the system
-2. ✅ Run your first example
-3. ✅ Trained your first model
-4. ✅ Evaluated the model
-5. ✅ Understood the basic components
-
-**Ready to explore!** Try modifying the examples, creating custom rules, or extending the architecture for your specific use case.
 # Implementation Summary
-
-## Complete File Checklist
-
-### ✅ Documentation (3 files)
-- [x] README.md - Professional README with installation, references, and complete documentation
-- [x] PROJECT_STRUCTURE.md - Detailed file structure and dependencies
-- [x] IMPLEMENTATION_SUMMARY.md - This file
-
-### ✅ Configuration Files (4 files)
-- [x] requirements.txt - Python dependencies
-- [x] setup.py - Package installation configuration
-- [x] .gitignore - Git ignore rules
-- [x] configs/default_config.yaml - Training configuration
-
-### ✅ Core Source Code (6 files in src/)
-- [x] src/__init__.py - Package initialization with exports
-- [x] src/neural_component.py - NeuralReasoner implementation
-- [x] src/symbolic_component.py - SymbolicVerifier and Rule implementation
-- [x] src/refinement_engine.py - RefinementEngine with ReasoningResult
-- [x] src/metacognitive_controller.py - MetacognitiveController with ReasoningStrategy
-- [x] src/utils.py - Utility functions (logging, checkpointing, etc.)
-
-### ✅ Training Module (4 files in training/)
-- [x] training/__init__.py - Training package initialization
-- [x] training/train.py - DeepSupervisionTrainer and training loop
-- [x] training/evaluate.py - Evaluation functions and metrics
-- [x] training/visualize.py - Plotting and visualization functions
-
-### ✅ Test Suite (5 files in tests/)
-- [x] tests/__init__.py - Test package initialization
-- [x] tests/test_neural.py - Tests for NeuralReasoner
-- [x] tests/test_symbolic.py - Tests for SymbolicVerifier
-- [x] tests/test_refinement.py - Tests for RefinementEngine
-- [x] tests/test_integration.py - Integration tests for full system
-
-### ✅ Examples (1 file in examples/)
-- [x] examples/simple_example.py - Complete working example
-
-**Total: 23 files**
-
-## Import Verification
-
-### src/neural_component.py
-```python
-import torch
-import torch.nn as nn
-import logging
-```
-✅ No internal imports - base component
-
-### src/symbolic_component.py
-```python
-import torch
-from typing import List, Tuple, Optional, Dict, Callable
-from dataclasses import dataclass
-import logging
-```
-✅ No internal imports - base component
-
-### src/refinement_engine.py
-```python
-import torch
-from typing import Optional, List
-from dataclasses import dataclass
-import logging
-
-from src.neural_component import NeuralReasoner
-from src.symbolic_component import SymbolicVerifier
-```
-✅ Correctly imports NeuralReasoner and SymbolicVerifier
-
-### src/metacognitive_controller.py
-```python
-from enum import Enum
-from typing import Dict, List, Optional
-import logging
-```
-✅ No internal imports - independent component
-
-### src/utils.py
-```python
-import torch
-import logging
-import os
-import json
-from pathlib import Path
-from typing import Dict, Any, Optional
-from datetime import datetime
-```
-✅ No internal imports - utility module
-
-### src/__init__.py
-```python
-from src.neural_component import NeuralReasoner
-from src.symbolic_component import SymbolicVerifier, Rule
-from src.refinement_engine import RefinementEngine, RefinementState, ReasoningResult
-from src.metacognitive_controller import MetacognitiveController, ReasoningStrategy
-from src.utils import setup_logging, save_checkpoint, load_checkpoint
-```
-✅ All imports properly reference src/ modules
-
-### training/train.py
-```python
-from src.neural_component import NeuralReasoner
-from src.symbolic_component import SymbolicVerifier
-from src.refinement_engine import RefinementEngine
-from src.metacognitive_controller import MetacognitiveController
-from src.utils import setup_logging, save_checkpoint, save_metrics, get_device, set_seed
-```
-✅ All src imports correct
-
-### training/evaluate.py
-```python
-from src.neural_component import NeuralReasoner
-from src.symbolic_component import SymbolicVerifier
-from src.refinement_engine import RefinementEngine, ReasoningResult
-from src.metacognitive_controller import MetacognitiveController
-from src.utils import load_checkpoint, save_metrics, get_device, setup_logging
-```
-✅ All src imports correct
-
-### training/visualize.py
-```python
-from src.refinement_engine import ReasoningResult
-```
-✅ Minimal correct imports
-
-### tests/*.py
-All test files correctly import from src/ modules they are testing
-✅ All test imports verified
-
-### examples/simple_example.py
-```python
-from src.neural_component import NeuralReasoner
-from src.symbolic_component import SymbolicVerifier
-from src.refinement_engine import RefinementEngine
-from src.metacognitive_controller import MetacognitiveController
-from src.utils import setup_logging
-```
-✅ All imports correct
 
 ## Functionality Verification
 
@@ -712,19 +559,6 @@ python training/train.py --config configs/default_config.yaml
 python -c "from src import NeuralReasoner, SymbolicVerifier, RefinementEngine, MetacognitiveController; print('All imports successful')"
 ```
 
-## Summary
-
-✅ **All 23 files created and properly cross-referenced**
-✅ **No circular dependencies**
-✅ **All imports verified**
-✅ **Complete test coverage**
-✅ **Full documentation**
-✅ **Working example provided**
-✅ **Professional README with citations**
-✅ **Ready for installation and use**
-
-The implementation is complete, consistent, and ready to use. All files properly import and reference each other, and the entire system can be installed and run following the documented procedures.
-
 # NeuroSymbolic-Recursive Project Structure
 
 Complete file structure for the project with all components properly cross-referenced.
@@ -788,90 +622,7 @@ neurosymbolic-recursive/
     └── api_reference.md             # API documentation
 ```
 
-## File Dependencies
 
-### Core Source Files
-
-**src/__init__.py**
-- Exports: NeuralReasoner, SymbolicVerifier, RefinementEngine, MetacognitiveController
-- Imports: All core components from src/ modules
-
-**src/neural_component.py**
-- Dependencies: torch, torch.nn
-- Imports: logging
-- Exports: NeuralReasoner class
-
-**src/symbolic_component.py**
-- Dependencies: torch
-- Imports: logging, dataclasses, typing
-- Exports: SymbolicVerifier, Rule classes
-
-**src/refinement_engine.py**
-- Dependencies: torch
-- Imports: src.neural_component.NeuralReasoner
-- Imports: src.symbolic_component.SymbolicVerifier
-- Exports: RefinementEngine, RefinementState, ReasoningResult
-
-**src/metacognitive_controller.py**
-- Dependencies: None (pure Python)
-- Imports: logging, enum
-- Exports: MetacognitiveController, ReasoningStrategy
-
-**src/utils.py**
-- Dependencies: torch
-- Imports: logging, pathlib, json, datetime
-- Exports: Utility functions
-
-### Training Files
-
-**training/train.py**
-- Imports: src.neural_component.NeuralReasoner
-- Imports: src.symbolic_component.SymbolicVerifier
-- Imports: src.refinement_engine.RefinementEngine
-- Imports: src.metacognitive_controller.MetacognitiveController
-- Imports: src.utils (all utility functions)
-- Exports: DeepSupervisionTrainer, train_model
-
-**training/evaluate.py**
-- Imports: src.neural_component.NeuralReasoner
-- Imports: src.symbolic_component.SymbolicVerifier
-- Imports: src.refinement_engine.RefinementEngine, ReasoningResult
-- Imports: src.metacognitive_controller.MetacognitiveController
-- Imports: src.utils
-- Exports: evaluate_model, compute_metrics
-
-**training/visualize.py**
-- Dependencies: matplotlib, seaborn, numpy
-- Imports: src.refinement_engine.ReasoningResult
-- Exports: Visualization functions
-
-### Test Files
-
-**tests/test_neural.py**
-- Imports: src.neural_component.NeuralReasoner
-- Tests: NeuralReasoner class functionality
-
-**tests/test_symbolic.py**
-- Imports: src.symbolic_component.SymbolicVerifier, Rule
-- Tests: SymbolicVerifier class functionality
-
-**tests/test_refinement.py**
-- Imports: src.neural_component.NeuralReasoner
-- Imports: src.symbolic_component.SymbolicVerifier
-- Imports: src.refinement_engine.RefinementEngine, ReasoningResult
-- Tests: RefinementEngine class functionality
-
-**tests/test_integration.py**
-- Imports: All src components
-- Imports: training.train.DeepSupervisionTrainer
-- Tests: Full system integration
-
-### Example Files
-
-**examples/simple_example.py**
-- Imports: All src components
-- Imports: src.utils.setup_logging
-- Demonstrates: Basic usage of the complete system
 
 ## Import Chain
 
@@ -906,112 +657,7 @@ tests/*.py
 4. **Integration tests** verify component interactions
 5. **Utils** are used throughout but depend on nothing internal
 
-## Running the Project
 
-### Installation
-```bash
-pip install -e .
-```
-
-### Run Tests
-```bash
-pytest tests/
-```
-
-### Run Example
-```bash
-python examples/simple_example.py
-```
-
-### Train Model
-```bash
-python training/train.py --config configs/default_config.yaml
-```
-
-### Evaluate Model
-```bash
-python training/evaluate.py --checkpoint models/checkpoints/best_model.pt
-```
-
-## Notes
-
-- All imports use absolute imports from the `src` package
-- No circular dependencies exist in the codebase
-- Each module can be tested independently
-- Configuration is centralized in YAML files
-- All file paths are created if they don't exist
-- Logging is configured at the entry point of each script
-### Development Installation
-
-For contributors and developers who want to modify the codebase, install the package in editable mode. This allows changes to the source code to be immediately reflected without reinstalling. Use `pip install -e .` from the project root directory after creating a setup.py file.
-
-### Verification
-
-After installation, verify that everything is working correctly by running the test suite with `pytest tests/` from the project root directory. All tests should pass, confirming that the environment is properly configured and all components are functioning correctly. You can also run the simple example with `python examples/simple_example.py` to see the system in action.
-
-## Quick Start
-
-To quickly understand how the system works, start with the provided example script. This demonstrates the complete reasoning process on a simple puzzle problem, showing how the neural and symbolic components interact through recursive refinement cycles.
-
-Run the basic example with `python examples/simple_example.py`. This will initialize the system components, load a sample puzzle, execute the recursive reasoning process with detailed logging, and display the step-by-step refinement showing solution evolution. The output will show confidence scores, symbolic verification results, and the final solution along with the number of refinement steps required.
-
-For training your own models, use the training script with `python training/train.py --config configs/default_config.yaml`. This will load training data, initialize the model architecture, run multiple epochs with deep supervision, evaluate on validation data, and save checkpoints of the trained model. Training progress is logged to both the console and a log file for later analysis.
-
-To evaluate a trained model on test data, run `python training/evaluate.py --checkpoint models/checkpoints/best_model.pt`. This loads the saved model, runs inference on test puzzles, computes accuracy and reasoning quality metrics, and generates visualizations of the reasoning process.
-
-## Architecture Details
-
-The neural component is implemented as a feedforward network with specialized structure for recursive reasoning. The input embedding layer encodes puzzle states into continuous representations suitable for neural processing. A feedback embedding layer processes previous hypotheses and violation signals to guide refinement. The core reasoning network applies transformations that can be recursively applied to progressively improve solutions. Output heads generate solution proposals and confidence estimates.
-
-The symbolic component maintains a knowledge base of logical rules and constraints specific to the problem domain. The verification engine checks proposed solutions against all applicable constraints and generates detailed feedback about any violations. The explanation generator produces human-readable descriptions of why solutions are valid or invalid. The rule representation uses a flexible format that can encode various constraint types including equality, inequality, uniqueness, and structural constraints.
-
-The refinement engine implements the core recursive reasoning loop that alternates between neural proposal and symbolic verification. It initializes reasoning with a neural hypothesis, then enters a refinement cycle where it verifies the current hypothesis symbolically, encodes any violations as neural feedback, generates an improved hypothesis through the neural network, and repeats until convergence or maximum iterations. The stopping criteria include symbolic validity with high confidence, reaching maximum iterations, or detecting convergence when successive hypotheses are nearly identical.
-
-The metacognitive controller operates at a higher level than the refinement loop, making strategic decisions about the reasoning process. It selects reasoning strategies based on estimated problem complexity and available computational budget. It dynamically adjusts weights between neural and symbolic components based on their recent performance. It learns over time which strategies work best for different problem types. It monitors reasoning quality and can trigger strategy changes mid-process if needed.
-
-## Training Methodology
-
-Training employs deep supervision across all refinement steps rather than only supervising final outputs. For each training sample, the system executes the complete refinement process for a fixed number of steps. Loss is computed at each refinement step by comparing the intermediate hypothesis against the ground truth solution. Later refinement steps receive higher loss weights, reflecting that they should produce solutions closer to the target. Gradients from all supervised steps are aggregated and used to update the neural network parameters.
-
-The symbolic verification results also influence training through auxiliary loss terms. When violations are detected, the system adds penalties that encourage the neural component to avoid similar errors in future iterations. This helps the neural network internalize logical constraints implicitly while maintaining the symbolic component as an explicit safety mechanism.
-
-The metacognitive controller learns through a different mechanism based on performance statistics. It tracks which strategies succeed or fail for different problem types and adjusts its decision-making accordingly. This learning is separate from the gradient-based neural network training but occurs in parallel, gradually improving the system's ability to select appropriate reasoning approaches.
-
-Training hyperparameters can be configured through YAML configuration files that specify model architecture dimensions, learning rates and schedules, batch sizes and gradient accumulation steps, number of refinement steps for deep supervision, loss weights for different supervision levels, and various other training parameters. The default configuration provides reasonable starting values that can be adjusted based on specific problem requirements.
-
-## Usage Examples
-
-The examples directory contains several demonstrations of system capabilities. The simple_example.py script shows basic usage with synthetic puzzles, illustrating the core reasoning loop and refinement process. The advanced_example.py script demonstrates more sophisticated features including custom symbolic rules, hierarchical problem decomposition, and interpretability analysis.
-
-For custom problem domains, you can define your own symbolic rules by subclassing the SymbolicVerifier class and implementing domain-specific constraint checking. The neural architecture can be modified by adjusting the NeuralReasoner class to incorporate domain knowledge or use different network structures. The refinement process can be customized by configuring stopping criteria, maximum iterations, and confidence thresholds.
-
-## Testing
-
-The test suite provides comprehensive coverage of system components and their integration. Unit tests verify individual components in isolation, checking neural network forward and backward passes, symbolic verification logic, refinement engine step execution, and metacognitive controller decisions. Integration tests ensure components work correctly together, validating end-to-end reasoning processes, training with deep supervision, and evaluation metrics computation.
-
-Run all tests with `pytest tests/` or specific test files with `pytest tests/test_neural.py`. Generate a coverage report with `pytest --cov=src --cov-report=html tests/` to identify untested code paths. The coverage report is generated in the htmlcov directory and can be viewed in a web browser.
-
-## Project Structure
-
-The repository is organized as follows. The src directory contains the core implementation with separate modules for each architectural component. The training directory includes scripts for model training, evaluation, and visualization. The tests directory provides comprehensive test coverage for all components. The examples directory contains demonstration scripts and sample puzzle data. The models directory stores trained model checkpoints. The configs directory holds YAML configuration files. The docs directory contains additional documentation and technical notes.
-
-Each source module focuses on a specific responsibility. The neural_component.py module implements the neural reasoner network. The symbolic_component.py module provides symbolic verification and rule management. The refinement_engine.py module coordinates the recursive reasoning loop. The metacognitive_controller.py module handles strategic decision-making. The utils.py module contains shared utilities for data loading, logging, and visualization.
-
-## Performance Considerations
-
-The system is designed to run efficiently on modest hardware while maintaining research flexibility. For small problems with input dimensions under 100 and output dimensions under 20, a modern CPU is sufficient. Medium problems benefit from GPU acceleration, particularly during training with large batch sizes. Large-scale problems with complex symbolic rule sets may require distributed training or specialized hardware.
-
-Memory usage scales primarily with batch size and refinement depth. Each refinement step stores intermediate activations for gradient computation during training. The symbolic verifier maintains rule databases that grow with problem complexity. Checkpointing and gradient accumulation can reduce memory requirements at the cost of training speed.
-
-Inference time depends on the number of refinement cycles required. Simple problems often converge in 2-3 cycles while complex problems may use the maximum allowed iterations. The adaptive computation mechanism learns to allocate more cycles to difficult problems, balancing accuracy and efficiency.
-
-## Extending the System
-
-The modular architecture facilitates several natural extensions. Hierarchical reasoning can be added by stacking multiple neural-symbolic pairs at different abstraction levels, with lower levels handling local constraints and higher levels addressing global structure. Multi-agent capabilities can be incorporated by having different agents specialize in different reasoning types, coordinated through the metacognitive controller.
-
-Enhanced symbolic reasoning can include probabilistic logic for uncertainty handling, temporal reasoning for dynamic problems, and causal reasoning for understanding action consequences. Advanced neural architectures such as graph neural networks, attention mechanisms, or meta-learning can improve pattern recognition while maintaining integration with symbolic components.
-
-The refinement engine can be extended with more sophisticated stopping criteria, adaptive iteration budgets based on problem complexity, or hierarchical refinement where different aspects of the solution are refined at different rates. The metacognitive controller can incorporate reinforcement learning for strategy selection or Bayesian optimization for hyperparameter tuning.
 
 ## References
 
@@ -1026,10 +672,6 @@ For neural-symbolic systems in practice, see the NEXUS architecture at https://g
 ## Contributing
 
 Contributions are welcome from researchers and developers interested in advancing reasoning systems. Before contributing, please review the existing codebase and test suite to understand the architecture and coding conventions. Open an issue to discuss significant changes or new features before implementing them. This ensures alignment with project goals and prevents duplicated effort.
-
-When submitting pull requests, include tests for new functionality to maintain code coverage, add docstrings and comments explaining complex logic, update documentation to reflect changes, and ensure all existing tests pass with your modifications. Follow the existing code style and structure to maintain consistency across the project.
-
-Areas particularly valuable for contribution include implementing new symbolic reasoning capabilities for different constraint types, developing visualization tools for reasoning traces and component interactions, extending the neural architecture with attention or graph networks, adding benchmark problems and evaluation metrics, and improving training efficiency and convergence.
 
 ## License
 
