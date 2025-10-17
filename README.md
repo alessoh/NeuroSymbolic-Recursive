@@ -685,6 +685,9 @@ This implementation synthesizes ideas from multiple research communities includi
 
 For questions, bug reports, or feature requests, please open an issue in the GitHub repository. For broader discussions about neural-symbolic reasoning or collaboration opportunities, contact the maintainers through the repository. For academic inquiries regarding research applications, please reference the relevant papers in the References section.
 
+Email: h.alessoh@comcast.net
+GitHub: @alessoh
+
 Documentation is maintained in the docs directory with additional technical details about component interactions, training procedures, and extension guidelines. The examples directory contains working code demonstrating various system capabilities. The test suite serves as additional documentation showing expected behavior and usage patterns.
 
 ## Citation
