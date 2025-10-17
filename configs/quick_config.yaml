@@ -1,0 +1,28 @@
+model:
+  input_dim: 16
+  hidden_dim: 64
+  output_dim: 9
+  dropout: 0.1
+
+data:
+  num_samples: 1000
+  train_split: 0.8
+  batch_size: 16
+
+training:
+  num_epochs: 5
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  num_refinement_steps: 2
+  checkpoint_freq: 5
+
+refinement:
+  max_iterations: 5
+  confidence_threshold: 0.9
+  convergence_tolerance: 0.01
+
+system:
+  seed: 42
+  use_gpu: false
+  log_level: INFO
+  num_workers: 4
